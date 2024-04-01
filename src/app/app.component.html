@@ -3,31 +3,35 @@
 <div class="container">
   <div class="row">
     <p-card
-      *ngFor="let i of [1, 2, 3]"
-      header="Title"
-      subheader="Description"
+      *ngFor="let advertisement of advertisements"
+      header="{{advertisement.title}}"
+      subheader="{{advertisement.description}}"
       class="col-lg-6 col-md-6 col-sm-12 my-4"
     >
       <ng-template pTemplate="header">
         <img
           alt="Card"
-          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+          src="{{advertisement.pictureURL}}"
         />
       </ng-template>
-      <h6>Expire: 10/05/2024</h6>
       <h6>Category: Glasses</h6>
+      <h6>Expire: {{advertisement.expiryDate | date: 'EEEE - dd/MM/yyyy'}}</h6>
+      <h6 *ngIf="advertisement.showCode" class="text-danger">Code: {{advertisement.couponCode}}</h6>
       <ng-template pTemplate="footer">
         <p-button
-          styleClass="p-button-rounded"
+          [rounded]="true"
           label="Location"
           icon="pi pi-map-marker"
+          (click)="redirectToPage(advertisement.locationURL)"
         ></p-button>
         <p-button
           [rounded]="true"
           label="Code"
           icon="pi pi-lock-open"
-          styleClass="p-button-rounded p-button-secondary"
+          styleClass="p-button-rounded p-button-success"
           class="mx-3"
+          [disabled]= "advertisement.showCode"
+          (click)="showCode(advertisement)"
         ></p-button>
       </ng-template>
     </p-card>
