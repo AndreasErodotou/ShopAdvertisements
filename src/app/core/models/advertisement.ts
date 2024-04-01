@@ -9,7 +9,8 @@ export class Advertisement{
   public address?: string;
   public locationURL?: string;
   public pictureURL?: string;
-  public showCode?: boolean
+  public showCode?: boolean;
+  public shopName?: string;
 
   constructor(data: Advertisement){
     Object.assign(this, data);

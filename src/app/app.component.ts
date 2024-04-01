@@ -27,6 +27,7 @@ export class AppComponent {
         pictureURL:
           'https://cdn.vectorstock.com/i/1000x1000/42/88/summer-sale-50-off-discount-banner-sunglasses-vector-32504288.webp',
         showCode: false,
+        shopName: "Glasses Kostis"
       }),
       new Advertisement({
         id: 2,
@@ -35,13 +36,14 @@ export class AppComponent {
         couponCode: '1234567',
         title: 'Watches - Over 50% Discount',
         description: 'Offer Applicable only for classic watches',
-        expiryDate: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 31),
+        expiryDate: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 11),
         isCouponCodeNeeded: true,
         locationURL:
           'https://www.google.com/maps/place/Time2Watch/@35.1181817,33.3112713,17z/data=!3m1!4b1!4m6!3m5!1s0x14de1bfa45c5b2d3:0x226249d30e07f035!8m2!3d35.1181773!4d33.3138462!16s%2Fg%2F11tcs28tr4?entry=ttu',
         pictureURL:
           'https://img.freepik.com/free-psd/black-friday-super-sale-web-banner-template_106176-1640.jpg',
         showCode: false,
+        shopName: "Watches Store Nic"
       }),
     ];
   }

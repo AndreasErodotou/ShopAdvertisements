@@ -14,7 +14,8 @@
           src="{{advertisement.pictureURL}}"
         />
       </ng-template>
-      <h6>Category: Glasses</h6>
+      <h5><strong>{{advertisement.shopName}}</strong></h5>
+      <h6>Category: {{advertisement.category}}</h6>
       <h6>Address: {{advertisement.address}}</h6>
       <h6>Expire: {{advertisement.expiryDate | date: 'EEEE - dd/MM/yyyy'}}</h6>
       <h6 *ngIf="advertisement.showCode" class="text-danger">Code: {{advertisement.couponCode}}</h6>
